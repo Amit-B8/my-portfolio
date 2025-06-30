@@ -1,103 +1,284 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Github, Linkedin, Mail, ExternalLink, Download, Code } from 'lucide-react'
+import Link from "next/link"
 
-export default function Home() {
+export default function Portfolio() {
+  const skills = [
+    { name: "React.js", category: "Frontend" },
+    { name: "Next.js", category: "Frontend" },
+    { name: "TypeScript", category: "Frontend" },
+    { name: "Python", category: "Backend" },
+    { name: "Node.js", category: "Backend" },
+    { name: "PostgreSQL", category: "Database" },
+    { name: "Tailwind CSS", category: "Frontend" },
+    { name: "Git", category: "Tools" },
+  ]
+
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      description:
+        "Full-stack e-commerce application with user authentication, payment processing, and admin dashboard.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      githubUrl: "#",
+      liveUrl: "#",
+      image: "/placeholder.svg?height=200&width=300",
+    },
+    {
+      title: "Task Management App",
+      description: "Collaborative task management tool with real-time updates and team collaboration features.",
+      technologies: ["Next.js", "Python", "WebSocket", "MongoDB"],
+      githubUrl: "#",
+      liveUrl: "#",
+      image: "/placeholder.svg?height=200&width=300",
+    },
+    {
+      title: "Data Analytics Dashboard",
+      description: "Interactive dashboard for data visualization and analytics with Python backend processing.",
+      technologies: ["React", "Python", "D3.js", "FastAPI"],
+      githubUrl: "#",
+      liveUrl: "#",
+      image: "/placeholder.svg?height=200&width=300",
+    },
+  ]
+
+  const experience = [
+    {
+      title: "Full Stack Developer",
+      company: "Tech Company",
+      period: "2023 - Present",
+      description:
+        "Developed and maintained web applications using React.js and Python. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+    },
+    {
+      title: "Frontend Developer",
+      company: "Startup Inc",
+      period: "2022 - 2023",
+      description:
+        "Built responsive user interfaces and improved application performance. Worked closely with designers to implement pixel-perfect designs.",
+    },
+    {
+      title: "Junior Developer",
+      company: "Development Agency",
+      period: "2021 - 2022",
+      description:
+        "Assisted in developing client websites and applications. Gained experience in various technologies and development practices.",
+    },
+  ]
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-14 items-center">
+          <div className="mr-4 flex">
+            <Link href="/" className="mr-6 flex items-center space-x-2">
+              <Code className="h-6 w-6" />
+              <span className="font-bold">Your Name</span>
+            </Link>
+          </div>
+          <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+            <nav className="flex items-center space-x-6">
+              <Link href="#about" className="text-sm font-medium hover:text-primary">
+                About
+              </Link>
+              <Link href="#skills" className="text-sm font-medium hover:text-primary">
+                Skills
+              </Link>
+              <Link href="#projects" className="text-sm font-medium hover:text-primary">
+                Projects
+              </Link>
+              <Link href="#experience" className="text-sm font-medium hover:text-primary">
+                Experience
+              </Link>
+              <Link href="#contact" className="text-sm font-medium hover:text-primary">
+                Contact
+              </Link>
+            </nav>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="about" className="container py-24 md:py-32">
+        <div className="flex flex-col items-center text-center space-y-8">
+          <div className="space-y-4">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+              Hi, I'm <span className="text-primary">Your Name</span>
+            </h1>
+            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
+              Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
+              modern technologies.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" asChild>
+              <Link href="#contact">
+                <Mail className="mr-2 h-4 w-4" />
+                Get In Touch
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/resume.pdf" target="_blank">
+                <Download className="mr-2 h-4 w-4" />
+                Download Resume
+              </Link>
+            </Button>
+          </div>
+          <div className="flex space-x-4">
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="https://github.com" target="_blank">
+                <Github className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="https://linkedin.com" target="_blank">
+                <Linkedin className="h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="container py-24 bg-muted/50">
+        <div className="space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold tracking-tighter">Skills & Technologies</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto">
+              Here are the technologies and tools I work with to bring ideas to life.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {skills.map((skill, index) => (
+              <Badge key={index} variant="secondary" className="px-3 py-1 text-sm">
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="container py-24">
+        <div className="space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold tracking-tighter">Featured Projects</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto">
+              A showcase of my recent work and personal projects.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project, index) => (
+              <Card key={index} className="overflow-hidden">
+                <div className="aspect-video bg-muted">
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="flex items-center justify-between">
+                    {project.title}
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="icon" asChild>
+                        <Link href={project.githubUrl} target="_blank">
+                          <Github className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <Button variant="ghost" size="icon" asChild>
+                        <Link href={project.liveUrl} target="_blank">
+                          <ExternalLink className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="container py-24 bg-muted/50">
+        <div className="space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold tracking-tighter">Work Experience</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto">
+              My professional journey and key accomplishments.
+            </p>
+          </div>
+          <div className="space-y-6">
+            {experience.map((job, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <CardTitle>{job.title}</CardTitle>
+                    <Badge variant="secondary">{job.period}</Badge>
+                  </div>
+                  <CardDescription className="font-medium">{job.company}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{job.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="container py-24">
+        <div className="space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold tracking-tighter">Get In Touch</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto">
+              I'm always interested in new opportunities and collaborations. Let's connect and discuss how we can work
+              together!
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link href="mailto:your.email@example.com">
+                <Mail className="mr-2 h-4 w-4" />
+                Send Email
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="https://linkedin.com/in/yourprofile" target="_blank">
+                <Linkedin className="mr-2 h-4 w-4" />
+                Connect on LinkedIn
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t py-6 md:py-0">
+        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+          <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+            <Code className="h-6 w-6" />
+            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+              Built with Next.js and Tailwind CSS. © 2024 Your Name.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
