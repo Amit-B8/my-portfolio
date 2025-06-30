@@ -76,6 +76,7 @@ export default function Portfolio() {
           <div className="mr-4 flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Code className="h-6 w-6" />
+              {/*This will add my name to the top left*/}
               <span className="font-bold">Amit Boodhoo</span>
             </Link>
           </div>
@@ -134,7 +135,8 @@ export default function Portfolio() {
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://linkedin.com" target="_blank">
+              {/*This will add my name to the top left*/}
+              <Link href="https://www.linkedin.com/in/amit-boodhoo/" target="_blank">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </Button>
