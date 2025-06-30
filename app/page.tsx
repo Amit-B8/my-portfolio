@@ -76,7 +76,7 @@ export default function Portfolio() {
           <div className="mr-4 flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Code className="h-6 w-6" />
-              <span className="font-bold">Your Name</span>
+              <span className="font-bold">Amit Boodhoo</span>
             </Link>
           </div>
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
