@@ -107,7 +107,7 @@ export default function Portfolio() {
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Hi, I'm <span className="text-primary">Your Name</span>
+              Hi, I'm <span className="text-primary">Amit Boodhoo</span>
             </h1>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
               Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
@@ -261,7 +261,7 @@ export default function Portfolio() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="https://linkedin.com/in/yourprofile" target="_blank">
+              <Link href="https://www.linkedin.com/in/amit-boodhoo/" target="_blank">
                 <Linkedin className="mr-2 h-4 w-4" />
                 Connect on LinkedIn
               </Link>
@@ -276,7 +276,7 @@ export default function Portfolio() {
           <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
             <Code className="h-6 w-6" />
             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              Built with Next.js and Tailwind CSS. © 2024 Your Name.
+              Built with Next.js and Tailwind CSS. © 2024 Amit Boodhoo.
             </p>
           </div>
         </div>
