@@ -19,7 +19,7 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Speak2Learn",
+      title: "hi",
       description:
         "Full-stack application with speach recognition being used to learn new topics and trivia question",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
