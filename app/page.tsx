@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Mail, ExternalLink, Download, Code } from 'lucide-react'
 import Link from "next/link"
+import { title } from "process"
 
 export default function Portfolio() {
   const skills = [
@@ -18,21 +19,21 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Speak2Learn",
       description:
-        "Full-stack e-commerce application with user authentication, payment processing, and admin dashboard.",
+        "Full-stack application with speach recognition being used to learn new topics and trivia question",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       githubUrl: "#",
       liveUrl: "#",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/Speak2LearnLogo.png?height=200&width=300",
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates and team collaboration features.",
+      title: "BO3",
+      description: "Best of three game to play against your friend!",
       technologies: ["Next.js", "Python", "WebSocket", "MongoDB"],
       githubUrl: "#",
       liveUrl: "#",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/BO3Logo.png?height=200&width=300",
     },
     {
       title: "Data Analytics Dashboard",
@@ -42,6 +43,7 @@ export default function Portfolio() {
       liveUrl: "#",
       image: "/placeholder.svg?height=200&width=300",
     },
+
   ]
 
   const experience = [
