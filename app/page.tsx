@@ -25,7 +25,7 @@ export default function Portfolio() {
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
       githubUrl: "#",
       liveUrl: "#",
-      image: "/Speak2LearnLogo.png?height=200&width=300",
+      image: "/Speak2TriviaLogo.png?height=200&width=300",
     },
     {
       title: "BO3",
@@ -48,18 +48,18 @@ export default function Portfolio() {
 
   const experience = [
     {
-      title: "Full Stack Developer",
-      company: "Tech Company",
-      period: "2023 - Present",
+      title: "Supply Chain Planner Intern",
+      company: "Eaton",
+      period: "May 2025 - August",
       description:
-        "Developed and maintained web applications using React.js and Python. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+        "Collaborated on a project to optimize order modifiers by developing a more efficient method to pull, review, and update planning data, improving visibility for potential changes. Analyzed excess inventory using large Excel datasets and maintained Oracle data by identifying usage patterns, correcting lead time errors, updating bills of materials, renaming parts, and contributing to non-standard job processing to support inventory reduction and data accuracy.",
     },
     {
-      title: "Frontend Developer",
-      company: "Startup Inc",
-      period: "2022 - 2023",
+      title: "Soccer Referee",
+      company: "U.S Soccer Federation",
+      period: "June 2017 - 2024",
       description:
-        "Built responsive user interfaces and improved application performance. Worked closely with designers to implement pixel-perfect designs.",
+        "Officiated 4+ youth soccer games per week for ages 10–18, including both regular season and tournament matches, ensuring safety, fairness, and consistent rule enforcement. Assisted injured players and resolved conflicts to maintain a safe environment. Covered extra games during busy tournaments or referee absences to keep matches running smoothly.",
     },
     {
       title: "Junior Developer",
