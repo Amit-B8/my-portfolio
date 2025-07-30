@@ -21,17 +21,17 @@ export default function Portfolio() {
     {
       title: "Speak2Trivia",
       description:
-        "Full-stack application with speach recognition being used to learn new topics and trivia question",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      githubUrl: "#",
+        "Full-stack application with speech recognition being used to learn new topics and trivia question",
+      technologies: ["React", "Next.js", "TypeScript", "CSS"],
+      githubUrl: "https://github.com/Amit-B8/Speak2Trivia",
       liveUrl: "#",
       image: "/Speak2TriviaLogo.png?height=200&width=300",
     },
     {
       title: "BO3",
       description: "Best of three game to play against your friend!",
-      technologies: ["Next.js", "Python", "WebSocket", "MongoDB"],
-      githubUrl: "#",
+      technologies: ["Python", "Tkinter"],
+      githubUrl: "https://github.com/Amit-B8/BO3",
       liveUrl: "#",
       image: "/BO3Logo.png?height=200&width=300",
     },
