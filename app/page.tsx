@@ -36,12 +36,12 @@ export default function Portfolio() {
       image: "/BO3Logo.png?height=200&width=300",
     },
     {
-      title: "Data Analytics Dashboard",
-      description: "Interactive dashboard for data visualization and analytics with Python backend processing.",
-      technologies: ["React", "Python", "D3.js", "FastAPI"],
-      githubUrl: "#",
+      title: "DiceGame",
+      description: "A Dice Game where two players compete for the highest score!",
+      technologies: ["C++"],
+      githubUrl: "https://github.com/Amit-B8/DiceGame",
       liveUrl: "#",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/DiceGame_Image.png?height=200&width=300",
     },
 
   ]
@@ -108,10 +108,10 @@ export default function Portfolio() {
       <section id="about" className="container py-24 md:py-32">
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Hi, I'm <span className="text-primary">Amit Boodhoo</span>
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">
+              Hi, I'm <span className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">Amit Boodhoo</span>
             </h1>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
+            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl ">
               Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
               modern technologies.
             </p>
