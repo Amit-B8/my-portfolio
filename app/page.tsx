@@ -77,9 +77,9 @@ export default function Portfolio() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-blue-100">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="sticky top-0 z-50 w-full border-b bg-transparent backdrop-blur">
         <div className="container flex h-14 items-center">
           <div className="mr-4 flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -111,7 +111,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="container py-24 md:py-32">
+      <section id="about" className="container py-24 md:py-32 bg-transparent">
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">
@@ -153,7 +153,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="container py-24 bg-muted/50">
+      <section id="skills" className="container py-24 bg-transparent">
         <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter">Skills & Technologies</h2>
@@ -161,18 +161,37 @@ export default function Portfolio() {
               Here are the technologies and tools I work with to bring ideas to life.
             </p>
           </div>
-           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 justify-items-center">
+
+          {/* Skills grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 justify-items-center">
             {skills.map((skill, index) => (
-              <Badge key={index} variant="secondary" className="px-3 py-1 text-sm">
+              <div key={index} className="px-4 py-2 text-lg text-black">
                 {skill.name}
-              </Badge>
+              </div>
             ))}
+          </div>
+
+          {/* Certification section */}
+          <div className="mt-6 p-8 text-center">
+            <h3 className="text-2xl font-bold text-black mb-4">Certification</h3>
+            <div className="p-2">
+              <h4 className="text-xl text-black mb-2">Google Cybersecurity Professional Certificate V2</h4>
+              <p className="text-black mb-4">Coursera • Issued 2025</p>
+              <a
+                href="https://www.credly.com/badges/3f317c82-ba85-4393-b617-e3e3b9a57b65/linked_in_profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-black font-semibold underline hover:text-black/80 text-lg"
+              >
+                View Certificate <ExternalLink className="ml-2 h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="container py-24">
+      <section id="projects" className="container py-24 bg-transparent">
         <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter">Featured Projects</h2>
@@ -183,7 +202,7 @@ export default function Portfolio() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <Card key={index} className="overflow-hidden">
-                <div className="aspect-video bg-muted">
+                <div className="aspect-video bg-transparent">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
@@ -224,7 +243,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="container py-24 bg-muted/50">
+      <section id="experience" className="container py-24 bg-transparent">
         <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter">Work Experience</h2>
@@ -252,7 +271,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container py-24">
+      <section id="contact" className="container py-24 bg-transparent">
         <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter">Get In Touch</h2>
