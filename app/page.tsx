@@ -7,14 +7,20 @@ import { title } from "process"
 
 export default function Portfolio() {
   const skills = [
+    { name: "Python", category: "Backend" },
+    { name: "Java", category: "Backend" },
+    { name: "C++", category: "Backend" },
     { name: "React.js", category: "Frontend" },
     { name: "Next.js", category: "Frontend" },
     { name: "TypeScript", category: "Frontend" },
-    { name: "Python", category: "Backend" },
     { name: "Node.js", category: "Backend" },
     { name: "PostgreSQL", category: "Database" },
     { name: "Tailwind CSS", category: "Frontend" },
     { name: "Git", category: "Tools" },
+    { name: "Microsoft 365", category: "Productivity" },
+    { name: "Oracle Applications (Supply Chain)", category: "ERP" },
+    { name: "R", category: "Data Analysis" },
+    { name: "MATLAB", category: "Data Analysis" }
   ]
 
   const projects = [
@@ -62,11 +68,11 @@ export default function Portfolio() {
         "Officiated 4+ youth soccer games per week for ages 10–18, including both regular season and tournament matches, ensuring safety, fairness, and consistent rule enforcement. Assisted injured players and resolved conflicts to maintain a safe environment. Covered extra games during busy tournaments or referee absences to keep matches running smoothly.",
     },
     {
-      title: "Junior Developer",
-      company: "Development Agency",
-      period: "2021 - 2022",
+      title: "Desk Clerk",
+      company: "University of Iowa Housing & Dining",
+      period: "August 2025 - Present",
       description:
-        "Assisted in developing client websites and applications. Gained experience in various technologies and development practices.",
+        "Assist residents with package pickup, key management, and general inquiries. Manage resident data and package records using Excel while ensuring accuracy and confidentiality. Collaborate with staff to maintain a welcoming and efficient dorm environment.",
     },
   ]
 
@@ -155,7 +161,7 @@ export default function Portfolio() {
               Here are the technologies and tools I work with to bring ideas to life.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-3">
+           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 justify-items-center">
             {skills.map((skill, index) => (
               <Badge key={index} variant="secondary" className="px-3 py-1 text-sm">
                 {skill.name}
@@ -278,7 +284,7 @@ export default function Portfolio() {
           <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
             <Code className="h-6 w-6" />
             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              Built with Next.js and Tailwind CSS. © 2024 Amit Boodhoo.
+              Built with Next.js and Tailwind CSS. © 2025 Amit Boodhoo.
             </p>
           </div>
         </div>
