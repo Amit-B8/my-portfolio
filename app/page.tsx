@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Mail, ExternalLink, Download, Code } from 'lucide-react'
 import Link from "next/link"
-import { title } from "process"
 
 export default function Portfolio() {
   const skills = [
@@ -115,7 +114,7 @@ export default function Portfolio() {
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">
-              Hi, I'm <span className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">Amit Boodhoo</span>
+              {"Hi, I'm"} <span className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">Amit Boodhoo</span>
             </h1>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl ">
               Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
@@ -275,14 +274,13 @@ export default function Portfolio() {
         <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter">Get In Touch</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
-              I'm always interested in new opportunities and collaborations. Let's connect and discuss how we can work
-              together!
-            </p>
+              <p className="text-muted-foreground max-w-[600px] mx-auto">
+                {"I'm always interested in new opportunities and collaborations. Let's connect and discuss how we can work together!"}
+              </p>            
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link href="mailto:your.email@example.com">
+              <Link href="mailto:aboodho@uiowa.edu">
                 <Mail className="mr-2 h-4 w-4" />
                 Send Email
               </Link>
