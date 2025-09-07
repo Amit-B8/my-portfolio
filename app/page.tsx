@@ -1,10 +1,50 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, ExternalLink, Download, Code } from 'lucide-react'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Github, Linkedin, Mail, ExternalLink, Download, Code, Palette } from 'lucide-react'
 import Link from "next/link"
 
 export default function Portfolio() {
+
+const [theme, setTheme] = useState("blue")
+
+  // Load theme from localStorage on component mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("portfolioTheme")
+    if (savedTheme) {
+      setTheme(savedTheme)
+    }
+  }, [])
+
+  // Save theme to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("portfolioTheme", theme)
+  }, [theme])
+
+  const themes: { [key: string]: string } = {
+    blue: "bg-blue-100",
+    purple: "bg-purple-100",
+    red: "bg-red-100",
+    green: "bg-green-100",
+    pink: "bg-pink-100",
+    yellow: "bg-yellow-100",
+    gray: "bg-gray-100",
+  }
+
+  const textColors: { [key: string]: string } = {
+    blue: "text-blue-600",
+    purple: "text-purple-600",
+    red: "text-red-600",
+    green: "text-green-600",
+    pink: "text-pink-600",
+    yellow: "text-yellow-500",
+    gray: "text-gray-600",
+  }
+
   const skills = [
     { name: "Python", category: "Backend" },
     { name: "Java", category: "Backend" },
@@ -16,10 +56,11 @@ export default function Portfolio() {
     { name: "PostgreSQL", category: "Database" },
     { name: "Tailwind CSS", category: "Frontend" },
     { name: "Git", category: "Tools" },
+    { name: "R Coding", category: "Data Analysis" },
     { name: "Microsoft 365", category: "Productivity" },
-    { name: "Oracle Applications (Supply Chain)", category: "ERP" },
-    { name: "R", category: "Data Analysis" },
-    { name: "MATLAB", category: "Data Analysis" }
+    { name: "Bash", category: "Tools" },
+    { name: "Object-Oriented Programming (OOP)", category: "Concepts" },
+    { name: "Data Analysis", category: "Concepts" },
   ]
 
   const projects = [
@@ -76,10 +117,10 @@ export default function Portfolio() {
   ]
 
   return (
-    <div className="min-h-screen bg-blue-100">
+    <div className={`min-h-screen ${themes[theme]} transition-colors duration-500`}>
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-transparent backdrop-blur">
-        <div className="container flex h-14 items-center">
+        <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">        
+          <div className="container flex h-14 items-center">
           <div className="mr-4 flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Code className="h-6 w-6" />
@@ -104,6 +145,24 @@ export default function Portfolio() {
               <Link href="#contact" className="text-sm font-medium hover:text-primary">
                 Contact
               </Link>
+              {/* Theme Selector */}
+              <div className="flex items-center space-x-2">
+                <Palette className="h-4 w-4" />
+                <Select value={theme} onValueChange={setTheme}>
+                  <SelectTrigger className="w-24">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="blue">🔵 Blue</SelectItem>
+                    <SelectItem value="purple">🟣 Purple</SelectItem>
+                    <SelectItem value="red">🔴 Red</SelectItem>
+                    <SelectItem value="green">🟢 Green</SelectItem>
+                    <SelectItem value="pink">🩷 Pink</SelectItem>
+                    <SelectItem value="yellow">🟡 Yellow</SelectItem>
+                    <SelectItem value="gray">⚫ Gray</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </nav>
           </div>
         </div>
@@ -113,8 +172,8 @@ export default function Portfolio() {
       <section id="about" className="container py-24 md:py-32 bg-transparent">
         <div className="flex flex-col items-center text-center space-y-8">
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">
-              {"Hi, I'm"} <span className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-blue-600">Amit Boodhoo</span>
+            <h1 className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>
+              {"Hi, I'm"} <span className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>Amit Boodhoo</span>
             </h1>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl ">
               Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
