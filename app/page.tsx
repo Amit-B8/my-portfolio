@@ -339,7 +339,7 @@ const [theme, setTheme] = useState("blue")
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link href="mailto:aboodho@uiowa.edu">
+              <Link href="mailto:aboodhoo@uiowa.edu">
                 <Mail className="mr-2 h-4 w-4" />
                 Send Email
               </Link>
