@@ -169,17 +169,24 @@ const [theme, setTheme] = useState("blue")
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="container py-24 md:py-32 bg-transparent">
+      <section id="about" className="container py-24 md:py-32 bg-transparent md:py-32 flex items-center justify-center text-center">
         <div className="flex flex-col items-center text-center space-y-8">
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-3xl mx-auto px-4">
+            {/* 👇 Profile Image goes here */}
+              <img
+                  src="/pfp.jpg"
+                  alt="Amit Boodhoo"
+                  className="w-32 h-32 rounded-full shadow-lg mx-auto object-cover"
+                />
+            {/* 👇 Profile Image goes here */}
             <h1 className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>
               {"Hi, I'm"} <span className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>Amit Boodhoo</span>
             </h1>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl ">
-              Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
-              modern technologies.
-            </p>
-          </div>
+                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
+                  Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
+                  modern technologies.
+                </p>
+              </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
               <Link href="#contact">
@@ -211,7 +218,7 @@ const [theme, setTheme] = useState("blue")
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="container py-24 bg-transparent">
+      <section id="skills" className="container py-24 bg-transparent font-bold">
         <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter">Skills & Technologies</h2>
