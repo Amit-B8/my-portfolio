@@ -46,21 +46,65 @@ const [theme, setTheme] = useState("blue")
   }
 
   const skills = [
-    { name: "Python", category: "Backend" },
-    { name: "Java", category: "Backend" },
-    { name: "C++", category: "Backend" },
-    { name: "React.js", category: "Frontend" },
-    { name: "Next.js", category: "Frontend" },
-    { name: "TypeScript", category: "Frontend" },
-    { name: "Node.js", category: "Backend" },
-    { name: "PostgreSQL", category: "Database" },
-    { name: "Tailwind CSS", category: "Frontend" },
-    { name: "Git", category: "Tools" },
-    { name: "R Coding", category: "Data Analysis" },
-    { name: "Microsoft 365", category: "Productivity" },
-    { name: "Bash", category: "Tools" },
-    { name: "Object-Oriented Programming (OOP)", category: "Concepts" },
-    { name: "Data Analysis", category: "Concepts" },
+    {
+      name: "Python",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    },
+    {
+      name: "Java",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    },
+    {
+      name: "C++",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    },
+    {
+      name: "React.js",
+      category: "Frontend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    },
+    {
+      name: "Next.js",
+      category: "Frontend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    },
+    {
+      name: "TypeScript",
+      category: "Frontend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    },
+    {
+      name: "Node.js",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    },
+    {
+      name: "PostgreSQL",
+      category: "Database",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
+    },
+    {
+      name: "Tailwind CSS",
+      category: "Frontend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    },
+    { name: "Git", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    {
+      name: "R Coding",
+      category: "Data Analysis",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg",
+    },
+    {
+      name: "Bash",
+      category: "Tools",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
+    },
+    { name: "Microsoft Excel", category: "Productivity", icon: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" },
+    { name: "Matlab", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg" },
+    { name: "JUnit Testing", category: "Testing", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" },
   ]
 
   const projects = [
@@ -178,7 +222,7 @@ const [theme, setTheme] = useState("blue")
                   alt="Amit Boodhoo"
                   className="w-32 h-32 rounded-full shadow-lg mx-auto object-cover"
                 />
-            {/* 👇 Profile Image goes here */}
+            {/* 👇 Profile Image Here */}
             <h1 className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>
               {"Hi, I'm"} <span className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>Amit Boodhoo</span>
             </h1>
@@ -227,14 +271,23 @@ const [theme, setTheme] = useState("blue")
             </p>
           </div>
 
-          {/* Skills grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 justify-items-center">
-            {skills.map((skill, index) => (
-              <div key={index} className="px-4 py-2 text-lg text-black">
-                {skill.name}
-              </div>
-            ))}
-          </div>
+          
+            {/* Skills grid with logos */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+              {skills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center p-3 sm:p-4 rounded-lg hover:bg-white/50 transition-colors"
+                >
+                  <img
+                    src={skill.icon || "/placeholder.svg"}
+                    alt={skill.name}
+                    className="w-10 h-10 sm:w-12 sm:h-12 mb-2 object-contain"
+                  />
+                  <span className="text-sm sm:text-base font-semibold text-black text-center">{skill.name}</span>
+                </div>
+              ))}
+            </div>
 
           {/* Certification section */}
           <div className="mt-6 p-8 text-center">
