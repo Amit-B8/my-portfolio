@@ -91,7 +91,10 @@ const [theme, setTheme] = useState("blue")
       category: "Frontend",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     },
-    { name: "Git", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "Git", 
+      category: "Tools", 
+      icon: "https://img.icons8.com/color/48/git/git-original.svg" 
+    },
     {
       name: "R Coding",
       category: "Data Analysis",
@@ -166,30 +169,34 @@ const [theme, setTheme] = useState("blue")
       <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
-            <div className="flex items-center"></div>
-            <Link href="/" className="mr-6 flex items-center space-x-2">
-              <Code className="h-6 w-6" />
-              {/*This will add my name to the top left*/}
-              <span className="font-bold">Amit Boodhoo</span>
-            </Link>
-          </div>
-          <div className="flex items-center space-x-2 sm:space-x-6">
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link href="#about" className="text-sm font-medium hover:text-primary">
-                About
+            {/* Left side - Name/Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center space-x-2">
+                <Code className="h-6 w-6" />
+                <span className="font-bold">Amit Boodhoo</span>
               </Link>
-              <Link href="#skills" className="text-sm font-medium hover:text-primary">
-                Skills
-              </Link>
-              <Link href="#projects" className="text-sm font-medium hover:text-primary">
-                Projects
-              </Link>
-              <Link href="#experience" className="text-sm font-medium hover:text-primary">
-                Experience
-              </Link>
-              <Link href="#contact" className="text-sm font-medium hover:text-primary">
-                Contact
-              </Link>
+            </div>
+
+            {/* Right side - Nav links + Theme */}
+            <div className="flex items-center space-x-2 sm:space-x-6">
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link href="#about" className="text-sm font-medium hover:text-primary">
+                  About
+                </Link>
+                <Link href="#skills" className="text-sm font-medium hover:text-primary">
+                  Skills
+                </Link>
+                <Link href="#projects" className="text-sm font-medium hover:text-primary">
+                  Projects
+                </Link>
+                <Link href="#experience" className="text-sm font-medium hover:text-primary">
+                  Experience
+                </Link>
+                <Link href="#contact" className="text-sm font-medium hover:text-primary">
+                  Contact
+                </Link>
+              </nav>
+
               {/* Theme Selector */}
               <div className="flex items-center space-x-2">
                 <Palette className="h-4 w-4" />
@@ -208,7 +215,7 @@ const [theme, setTheme] = useState("blue")
                   </SelectContent>
                 </Select>
               </div>
-            </nav>
+            </div>
           </div>
         </div>
       </nav>
@@ -217,7 +224,8 @@ const [theme, setTheme] = useState("blue")
       <section id="about" className="w-full py-16 sm:py-24 md:py-32 bg-transparent">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"></div>
         <div className="flex flex-col items-center text-center space-y-8">
-          <div className="space-y-6 w-full">            {/* 👇 Profile Image goes here */}
+          <div className="space-y-6 w-full">            
+            {/* 👇 Profile Image goes here */}
               <img
                   src="/pfp.jpg"
                   alt="Amit Boodhoo"
