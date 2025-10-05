@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Github, Linkedin, Mail, ExternalLink, Download, Code, Palette } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Code, Palette } from "lucide-react"
 import Link from "next/link"
 
 export default function Portfolio() {
@@ -93,7 +93,7 @@ const [theme, setTheme] = useState("blue")
     },
     { name: "Git", 
       category: "Tools", 
-      icon: "https://img.icons8.com/color/48/git/git-original.svg" 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" 
     },
     {
       name: "R Coding",
@@ -240,17 +240,11 @@ const [theme, setTheme] = useState("blue")
                   modern technologies.
                 </p>
               </div>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
+          <div className="flex justify-center px-4">
             <Button size="lg" asChild className="w-full sm:w-auto">
               <Link href="#contact">
                 <Mail className="mr-2 h-4 w-4" />
                 Get In Touch
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild className="w-full sm:w-auto bg-transparent">
-              <Link href="/resume.pdf" target="_blank">
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
               </Link>
             </Button>
           </div>
@@ -409,7 +403,7 @@ const [theme, setTheme] = useState("blue")
                 {"I'm always interested in new opportunities and collaborations. Let's connect and discuss how we can work together!"}
               </p>            
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+          <div className="flex justify-center px-4">
             <Button size="lg" asChild className="w-full sm:w-auto">
               <Link href="mailto:aboodhoo@uiowa.edu">
                 <Mail className="mr-2 h-4 w-4" />
