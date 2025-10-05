@@ -163,17 +163,18 @@ const [theme, setTheme] = useState("blue")
   return (
     <div className={`min-h-screen ${themes[theme]} transition-colors duration-500`}>
       {/* Navigation */}
-        <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">        
-          <div className="container flex h-14 items-center">
-          <div className="mr-4 flex">
+      <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex h-14 items-center justify-between">
+            <div className="flex items-center"></div>
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Code className="h-6 w-6" />
               {/*This will add my name to the top left*/}
               <span className="font-bold">Amit Boodhoo</span>
             </Link>
           </div>
-          <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-            <nav className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2 sm:space-x-6">
+            <nav className="hidden md:flex items-center space-x-6">
               <Link href="#about" className="text-sm font-medium hover:text-primary">
                 About
               </Link>
@@ -193,7 +194,7 @@ const [theme, setTheme] = useState("blue")
               <div className="flex items-center space-x-2">
                 <Palette className="h-4 w-4" />
                 <Select value={theme} onValueChange={setTheme}>
-                  <SelectTrigger className="w-24">
+                  <SelectTrigger className="w-20 sm:w-24">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -213,32 +214,32 @@ const [theme, setTheme] = useState("blue")
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="container py-24 md:py-32 bg-transparent md:py-32 flex items-center justify-center text-center">
+      <section id="about" className="w-full py-16 sm:py-24 md:py-32 bg-transparent">
+        <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"></div>
         <div className="flex flex-col items-center text-center space-y-8">
-          <div className="space-y-4 max-w-3xl mx-auto px-4">
-            {/* 👇 Profile Image goes here */}
+          <div className="space-y-6 w-full">            {/* 👇 Profile Image goes here */}
               <img
                   src="/pfp.jpg"
                   alt="Amit Boodhoo"
-                  className="w-32 h-32 rounded-full shadow-lg mx-auto object-cover"
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-lg mx-auto object-cover"
                 />
             {/* 👇 Profile Image Here */}
-            <h1 className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter ${textColors[theme]}`}>
               {"Hi, I'm"} <span className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl ${textColors[theme]}`}>Amit Boodhoo</span>
             </h1>
-                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
+                <p className="mx-auto max-w-[600px] text-base sm:text-lg md:text-xl text-muted-foreground px-4">
                   Full Stack Developer passionate about creating innovative web applications using React.js, Python, and
                   modern technologies.
                 </p>
               </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
+            <Button size="lg" asChild className="w-full sm:w-auto">
               <Link href="#contact">
                 <Mail className="mr-2 h-4 w-4" />
                 Get In Touch
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" asChild className="w-full sm:w-auto bg-transparent">
               <Link href="/resume.pdf" target="_blank">
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
@@ -247,7 +248,7 @@ const [theme, setTheme] = useState("blue")
           </div>
           <div className="flex space-x-4">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://github.com" target="_blank">
+              <Link href="https://github.com/Amit-B8" target="_blank">
                 <Github className="h-5 w-5" />
               </Link>
             </Button>
@@ -262,11 +263,11 @@ const [theme, setTheme] = useState("blue")
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="container py-24 bg-transparent font-bold">
+      <section id="skills" className="w-full py-16 sm:py-24 bg-transparent">
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter">Skills & Technologies</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter">Skills & Technologies</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto text-sm sm:text-base px-4">
               Here are the technologies and tools I work with to bring ideas to life.
             </p>
           </div>
@@ -290,18 +291,18 @@ const [theme, setTheme] = useState("blue")
             </div>
 
           {/* Certification section */}
-          <div className="mt-6 p-8 text-center">
-            <h3 className="text-2xl font-bold text-black mb-4">Certification</h3>
+          <div className="mt-12 p-6 sm:p-8 text-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-black mb-4">Certification</h3>
             <div className="p-2">
-              <h4 className="text-xl text-black mb-2">Google Cybersecurity Professional Certificate V2</h4>
-              <p className="text-black mb-4">Coursera • Issued 2025</p>
+              <h4 className="text-lg sm:text-xl text-black mb-2">Google Cybersecurity Professional Certificate V2</h4>
+              <p className="text-black mb-4 text-sm sm:text-base">Coursera • Issued 2025</p>
               <a
                 href="https://www.credly.com/badges/3f317c82-ba85-4393-b617-e3e3b9a57b65/linked_in_profile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-black font-semibold underline hover:text-black/80 text-lg"
+                className="inline-flex items-center text-black font-semibold underline hover:text-black/80 text-base sm:text-lg"
               >
-                View Certificate <ExternalLink className="ml-2 h-5 w-5" />
+                View Certificate <ExternalLink className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
             </div>
           </div>
@@ -309,15 +310,16 @@ const [theme, setTheme] = useState("blue")
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="container py-24 bg-transparent">
+      <section id="projects" className="w-full py-16 sm:py-24 bg-transparent">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter">Featured Projects</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter">Featured Projects</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto text-sm sm:text-base px-4">
               A showcase of my recent work and personal projects.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <Card key={index} className="overflow-hidden">
                 <div className="aspect-video bg-transparent">
@@ -328,7 +330,7 @@ const [theme, setTheme] = useState("blue")
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
+                  <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
                     {project.title}
                     <div className="flex space-x-2">
                       <Button variant="ghost" size="icon" asChild>
@@ -343,7 +345,7 @@ const [theme, setTheme] = useState("blue")
                       </Button>
                     </div>
                   </CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardDescription className="text-sm">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
@@ -361,11 +363,12 @@ const [theme, setTheme] = useState("blue")
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="container py-24 bg-transparent">
+      <section id="experience" className="w-full py-16 sm:py-24 bg-transparent">
+        <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"></div>
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter">Work Experience</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter">Work Experience</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto text-sm sm:text-base px-4">
               My professional journey and key accomplishments.
             </p>
           </div>
@@ -373,14 +376,14 @@ const [theme, setTheme] = useState("blue")
             {experience.map((job, index) => (
               <Card key={index}>
                 <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                    <CardTitle>{job.title}</CardTitle>
-                    <Badge variant="secondary">{job.period}</Badge>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <CardTitle className="text-lg sm:text-xl">{job.title}</CardTitle>
+                    <Badge variant="secondary" className="w-fit">{job.period}</Badge>
                   </div>
-                  <CardDescription className="font-medium">{job.company}</CardDescription>
+                  <CardDescription className="font-medium text-sm sm:text-base">{job.company}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{job.description}</p>
+                  <p className="text-muted-foreground text-sm sm:text-base">{job.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -389,22 +392,23 @@ const [theme, setTheme] = useState("blue")
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container py-24 bg-transparent">
+      <section id="contact" className="w-full py-16 sm:py-24 bg-transparent">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"></div>
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter">Get In Touch</h2>
-              <p className="text-muted-foreground max-w-[600px] mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter">Get In Touch</h2>
+              <p className="text-muted-foreground max-w-[600px] mx-auto text-sm sm:text-base px-4">
                 {"I'm always interested in new opportunities and collaborations. Let's connect and discuss how we can work together!"}
               </p>            
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <Button size="lg" asChild className="w-full sm:w-auto">
               <Link href="mailto:aboodhoo@uiowa.edu">
                 <Mail className="mr-2 h-4 w-4" />
                 Send Email
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" asChild className="w-full sm:w-auto bg-transparent">
               <Link href="https://www.linkedin.com/in/amit-boodhoo/" target="_blank">
                 <Linkedin className="mr-2 h-4 w-4" />
                 Connect on LinkedIn
@@ -415,13 +419,15 @@ const [theme, setTheme] = useState("blue")
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-            <Code className="h-6 w-6" />
-            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              Built with Next.js and Tailwind CSS. © 2025 Amit Boodhoo.
-            </p>
+      <footer className="border-t py-6 md:py-8">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
+            <div className="flex flex-col items-center gap-4 md:flex-row md:gap-2">
+              <Code className="h-6 w-6" />
+              <p className="text-center text-xs sm:text-sm leading-loose text-muted-foreground">
+                Built with Next.js and Tailwind CSS. © 2025 Amit Boodhoo.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
