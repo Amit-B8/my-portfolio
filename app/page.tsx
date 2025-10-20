@@ -340,11 +340,6 @@ const [theme, setTheme] = useState("blue")
                           <Github className="h-4 w-4" />
                         </Link>
                       </Button>
-                      <Button variant="ghost" size="icon" asChild>
-                        <Link href={project.liveUrl} target="_blank">
-                          <ExternalLink className="h-4 w-4" />
-                        </Link>
-                      </Button>
                     </div>
                   </CardTitle>
                   <CardDescription className="text-sm">{project.description}</CardDescription>
