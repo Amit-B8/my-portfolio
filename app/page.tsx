@@ -121,12 +121,28 @@ const [theme, setTheme] = useState("blue")
       image: "/Speak2TriviaLogo.png?height=200&width=300",
     },
     {
+      title: "MemeMachine",
+      description: "A dynamic web application that allows users to generate, customize, and share memes instantly. Features a library of templates and real-time text editing.",
+      technologies: ["React", "CSS", "API Integration"],
+      githubUrl: "https://github.com/Amit-B8/MemeMachine",
+      liveUrl: "#",
+      image: "/MemeMachine.png?height=200&width=300",
+    },
+    {
       title: "BO3",
       description: "Best of three game to play against your friend!",
       technologies: ["Python", "Tkinter"],
       githubUrl: "https://github.com/Amit-B8/BO3",
       liveUrl: "#",
       image: "/BO3Logo.png?height=200&width=300",
+    },
+    {
+      title: "Asteroids Game",
+      description: "A C++ implementation of the classic arcade shooter. Features object-oriented game entity management, collision detection, and vector-based movement.",
+      technologies: ["C++", "Game Loop"],
+      githubUrl: "https://github.com/Amit-B8/Asteroids",
+      liveUrl: "#",
+      image: "/Asteroids.png?height=200&width=300",
     },
     {
       title: "DiceGame",
@@ -136,6 +152,7 @@ const [theme, setTheme] = useState("blue")
       liveUrl: "#",
       image: "/DiceGame_Image.png?height=200&width=300",
     },
+    
 
   ]
 
