@@ -124,9 +124,25 @@ const [theme, setTheme] = useState("blue")
       title: "MemeMachine",
       description: "A dynamic web application that allows users to generate, customize, and share memes instantly. Features a library of templates and real-time text editing.",
       technologies: ["React", "CSS", "API Integration"],
-      githubUrl: "https://github.com/Amit-B8/MemeMachine",
+      githubUrl: "https://github.com/Amit-B8/GAITMemeMachine",
       liveUrl: "#",
       image: "/MemeMachine.png?height=200&width=300",
+    },
+    {
+      title: "Asteroids Game",
+      description: "A C++ implementation of the classic arcade shooter. Features object-oriented game entity management, collision detection, and vector-based movement.",
+      technologies: ["C++", "Game Loop"],
+      githubUrl: "https://github.com/Amit-B8/AsteroidsGame",
+      liveUrl: "#",
+      image: "/Asteroids.png?height=200&width=300",
+    },
+    {
+      title: "InkRush",
+      description: "A real-time multiplayer Draw & Guess game utilizing a multi-threaded client-server architecture. Features lag-compensated drawing synchronization, an embedded H2 database for word management, and a responsive JavaFX GUI.",
+      technologies: ["Java", "JavaFX", "H2 Database", "SceneBuilder"],
+      githubUrl: "https://github.com/Amit-B8/InkRush", 
+      liveUrl: "#",
+      image: "/InkRush.png?height=200&width=300",
     },
     {
       title: "BO3",
@@ -137,22 +153,14 @@ const [theme, setTheme] = useState("blue")
       image: "/BO3Logo.png?height=200&width=300",
     },
     {
-      title: "Asteroids Game",
-      description: "A C++ implementation of the classic arcade shooter. Features object-oriented game entity management, collision detection, and vector-based movement.",
-      technologies: ["C++", "Game Loop"],
-      githubUrl: "https://github.com/Amit-B8/Asteroids",
+      title: "HangmanFX",
+      description: "A classic word-guessing game featuring a full graphical user interface. Built with an FXML-based layout for smooth user interaction and dynamic game state rendering.",
+      technologies: ["Java", "JavaFX", "SceneBuilder"],
+      githubUrl: "https://github.com/Amit-B8/HangmanFX",
       liveUrl: "#",
-      image: "/Asteroids.png?height=200&width=300",
+      image: "/Hangman.png?height=200&width=300",
     },
-    {
-      title: "DiceGame",
-      description: "A Dice Game where two players compete for the highest score!",
-      technologies: ["C++"],
-      githubUrl: "https://github.com/Amit-B8/DiceGame",
-      liveUrl: "#",
-      image: "/DiceGame_Image.png?height=200&width=300",
-    },
-    
+  
 
   ]
 
