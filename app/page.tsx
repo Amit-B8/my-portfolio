@@ -105,9 +105,19 @@ const [theme, setTheme] = useState("blue")
       category: "Tools",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
     },
-    { name: "Microsoft Excel", category: "Productivity", icon: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" },
-    { name: "Matlab", category: "Tools", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg" },
-    { name: "JUnit Testing", category: "Testing", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" },
+    {
+      name: "Raspberry Pi",
+      category: "Hardware",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg",
+    },
+    { name: "Matlab", 
+      category: "Tools", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg" 
+    },
+    { name: "JUnit Testing", 
+      category: "Testing", 
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg"
+    },
   ]
 
   const projects = [
@@ -138,7 +148,7 @@ const [theme, setTheme] = useState("blue")
     },
     {
       title: "InkRush",
-      description: "A real-time multiplayer Draw & Guess game utilizing a multi-threaded client-server architecture. Features lag-compensated drawing synchronization, an embedded H2 database for word management, and a responsive JavaFX GUI.",
+      description: "A real-time multiplayer Draw & Guess game utilizing a client-server architecture. Features lag-compensated drawing synchronization, an embedded H2 database for word management, and a responsive JavaFX GUI.",
       technologies: ["Java", "JavaFX", "H2 Database", "SceneBuilder"],
       githubUrl: "https://github.com/Amit-B8/InkRush", 
       liveUrl: "#",
@@ -146,7 +156,7 @@ const [theme, setTheme] = useState("blue")
     },
     {
       title: "BO3",
-      description: "Best of three game to play against your friend!",
+      description: "A competitive local multiplayer Best of Three game built in Python. Features a custom graphical interface with real-world imagery, event-driven score tracking, and dynamic visuals for an engaging gameplay experience.",
       technologies: ["Python", "Tkinter"],
       githubUrl: "https://github.com/Amit-B8/BO3",
       liveUrl: "#",
