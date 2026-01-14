@@ -122,6 +122,15 @@ const [theme, setTheme] = useState("blue")
 
   const projects = [
     {
+      title: "FlashQuest",
+      description:
+        "A gamified flashcard application where study habits directly impact a digital pet's survival. Features real-time lifespan mechanics powered by flashcard mastery, a coin economy for learning rewards, and persistent state management.",
+      technologies: ["React", "Next.js", "TypeScript", "Web Speech API", "Tailwind CSS", "Lucide React"],
+      githubUrl: "https://github.com/Amit-B8/FlashQuest",
+      liveUrl: "https://flashquest-study.vercel.app/",
+      image: "/FlashQuestLogo.png?height=200&width=300",
+    },
+    {
       title: "Speak2Trivia",
       description:
         "Full-stack application with speech recognition being used to learn new topics and trivia question",
@@ -161,14 +170,6 @@ const [theme, setTheme] = useState("blue")
       githubUrl: "https://github.com/Amit-B8/BO3",
       liveUrl: "#",
       image: "/BO3Logo.png?height=200&width=300",
-    },
-    {
-      title: "HangmanFX",
-      description: "A classic word-guessing game featuring a full graphical user interface. Built with an FXML-based layout for smooth user interaction and dynamic game state rendering.",
-      technologies: ["Java", "JavaFX", "SceneBuilder"],
-      githubUrl: "https://github.com/Amit-B8/HangmanFX",
-      liveUrl: "#",
-      image: "/Hangman.png?height=200&width=300",
     },
   
 
@@ -370,12 +371,22 @@ const [theme, setTheme] = useState("blue")
                   <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
                     {project.title}
                     <div className="flex space-x-2">
-                      <Button variant="ghost" size="icon" asChild>
-                        <Link href={project.githubUrl} target="_blank">
-                          <Github className="h-4 w-4" />
+                    {/* GitHub Button */}
+                    <Button variant="ghost" size="icon" asChild title="View Code">
+                      <Link href={project.githubUrl} target="_blank">
+                        <Github className="h-4 w-4" />
+                      </Link>
+                    </Button>
+
+                    {/* NEW: Live Demo Button */}
+                    {project.liveUrl !== "#" && (
+                      <Button variant="ghost" size="icon" asChild title="Live Demo">
+                        <Link href={project.liveUrl} target="_blank">
+                          <ExternalLink className="h-4 w-4" />
                         </Link>
                       </Button>
-                    </div>
+                    )}
+                  </div>
                   </CardTitle>
                   <CardDescription className="text-sm">{project.description}</CardDescription>
                 </CardHeader>
