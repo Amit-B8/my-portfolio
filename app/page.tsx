@@ -141,7 +141,7 @@ const [theme, setTheme] = useState("blue")
     },
     {
       title: "MemeMachine",
-      description: "A dynamic web application that allows users to generate, customize, and share memes instantly. Features a library of templates and real-time text editing.",
+      description: "A dynamic web application that allows users to generate, customize, and share memes instantly. Features a library of templates and real-time text editing. Built with Next.js and Tailwind CSS to ensure a responsive, high-performance experience across all devices.",
       technologies: ["React", "CSS", "API Integration"],
       githubUrl: "https://github.com/Amit-B8/GAITMemeMachine",
       liveUrl: "#",
