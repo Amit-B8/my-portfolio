@@ -6,15 +6,25 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Github, Linkedin, Mail, ExternalLink, Code, Palette } from "lucide-react"
+import { Github, Linkedin, Mail, ExternalLink, Code, Palette, ImageIcon } from "lucide-react"
 import Link from "next/link"
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog"
 import { ProjectDetailsPage } from "@/components/ProjectDetailsPage"
 
 export default function Portfolio() {
   const [theme, setTheme] = useState("blue")
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null)
+  
+  // Track which experience card has its image gallery open
+  const [expandedJobs, setExpandedJobs] = useState<Record<number, boolean>>({})
+
+  const toggleJobImages = (index: number) => {
+    setExpandedJobs(prev => ({ ...prev, [index]: !prev[index] }))
+  }
 
   // Load theme from localStorage on component mount
+
+
   useEffect(() => {
     const savedTheme = localStorage.getItem("portfolioTheme")
     if (savedTheme) {
@@ -270,18 +280,27 @@ export default function Portfolio() {
 
   const experience = [
     {
+      title: "Digital Infrastructure Solutions Intern",
+      company: "HNTB",
+      period: "May 2026 - August 2026",
+      description: "Developed and optimized full-stack web applications using Angular, TypeScript, JavaScript, HTML, and CSS, while building and troubleshooting backend cloud infrastructure with Python and AWS. Engineered interactive GIS solutions using ArcGIS Pro and ArcGIS Experience Builder for major transportation initiatives, including a World Cup traffic management tool and live occupancy widgets. Authored custom SQL expressions to drive real-time map filters and UI triggers.",
+      images: ["/HNTB1.jpg", "/HNTB2.jpg", "/HNTB3.jpg"],
+    },
+    {
       title: "Supply Chain Planner Intern",
       company: "Eaton",
       period: "May 2025 - August",
       description:
         "Collaborated on a project to optimize order modifiers by developing a more efficient method to pull, review, and update planning data, improving visibility for potential changes. Analyzed excess inventory using large Excel datasets and maintained Oracle data by identifying usage patterns, correcting lead time errors, updating bills of materials, renaming parts, and contributing to non-standard job processing to support inventory reduction and data accuracy.",
+      images: ["/Eaton1.jpg", "/Eaton2.JPEG", "/Eaton3.JPEG", "/Eaton4.JPEG"],
     },
     {
       title: "Soccer Referee",
       company: "U.S Soccer Federation",
       period: "June 2017 - 2024",
       description:
-        "Officiated 4+ youth soccer games per week for ages 10–18, including both regular season and tournament matches, ensuring safety, fairness, and consistent rule enforcement. Assisted injured players and resolved conflicts to maintain a safe environment. Covered extra games during busy tournaments or referee absences to keep matches running smoothly.",
+        "Officiated 4+ youth soccer games per week for ages 10-18, including both regular season and tournament matches, ensuring safety, fairness, and consistent rule enforcement. Assisted injured players and resolved conflicts to maintain a safe environment. Covered extra games during busy tournaments or referee absences to keep matches running smoothly.",
+      // images: ["/BO3Logo.jpg", "/BO3Logo.jpg"],
     },
     {
       title: "Desk Clerk",
@@ -289,6 +308,7 @@ export default function Portfolio() {
       period: "August 2025 - Present",
       description:
         "Assist residents with package pickup, key management, and general inquiries. Manage resident data and package records using Excel while ensuring accuracy and confidentiality. Collaborate with staff to maintain a welcoming and efficient dorm environment.",
+      // images: ["/BO3Logo.jpg", "/BO3Logo.jpg"],
     },
   ]
 
@@ -752,10 +772,58 @@ export default function Portfolio() {
                         {job.company}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
                       <p className="text-muted-foreground text-sm sm:text-base">
                         {job.description}
                       </p>
+                      
+                      {/* Check if the job has images in the array */}
+                      {job.images && job.images.length > 0 && (
+                        <div className="flex flex-col space-y-3">
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="w-fit bg-white/50 hover:bg-white/80 transition-colors"
+                            onClick={() => toggleJobImages(index)}
+                          >
+                            <ImageIcon className="mr-2 h-4 w-4" />
+                            {expandedJobs[index] ? "Hide Images" : "View Images"}
+                          </Button>
+
+                          {/* The Animated Image Gallery */}
+                          {expandedJobs[index] && (
+                            <motion.div 
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              className="flex gap-3 overflow-x-auto pb-2 pt-2"
+                            >
+                              {job.images.map((img, i) => (
+                                <Dialog key={i}>
+                                  {/* The small clickable image */}
+                                  <DialogTrigger asChild>
+                                    <motion.img
+                                      src={img}
+                                      alt={`${job.company} project ${i + 1}`}
+                                      className="h-24 w-36 object-cover rounded-md border border-white/50 shadow-sm cursor-pointer"
+                                      whileHover={{ scale: 1.05 }}
+                                    />
+                                  </DialogTrigger>
+                                  
+                                  {/* The zoomed-in lightbox view */}
+                                  <DialogContent className="max-w-3xl bg-black/90 border-none shadow-none p-0 overflow-hidden flex justify-center items-center">
+                                    <DialogTitle className="sr-only">Image Preview</DialogTitle>
+                                    <img 
+                                      src={img} 
+                                      alt={`Full screen ${job.company} project ${i + 1}`} 
+                                      className="w-full h-auto max-h-[85vh] object-contain rounded-md"
+                                    />
+                                  </DialogContent>
+                                </Dialog>
+                              ))}
+                            </motion.div>
+                          )}
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
