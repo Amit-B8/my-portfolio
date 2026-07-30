@@ -471,7 +471,7 @@ export default function Portfolio() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button variant="ghost" size="icon" asChild>
-                    <Link href={social.href} target="_blank">
+                    <Link href={social.href} target="_blank" rel="noopener noreferrer">
                       <social.icon className="h-5 w-5" />
                     </Link>
                   </Button>
