@@ -284,7 +284,7 @@ export default function Portfolio() {
       company: "HNTB",
       period: "May 2026 - August 2026",
       description: "Developed and optimized full-stack web applications using Angular, TypeScript, JavaScript, HTML, and CSS, while building and troubleshooting backend cloud infrastructure with Python and AWS. Engineered interactive GIS solutions using ArcGIS Pro and ArcGIS Experience Builder for major transportation initiatives, including a World Cup traffic management tool and live occupancy widgets. Authored custom SQL expressions to drive real-time map filters and UI triggers.",
-      images: ["/HNTB1.jpg", "/HNTB2.jpg", "/HNTB3.jpg"],
+      images: ["/HNTB1.jpg", "/HNTB2.jpg", "/HNTB3.jpg", "/HNTB4.JPG"],
     },
     {
       title: "Supply Chain Planner Intern",
