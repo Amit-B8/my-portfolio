@@ -45,6 +45,9 @@ export default function Portfolio() {
     pink: "bg-gradient-to-br from-pink-50 via-pink-50/50 to-rose-50",
     yellow: "bg-gradient-to-br from-yellow-50 via-yellow-50/50 to-amber-50",
     gray: "bg-gradient-to-br from-gray-50 via-gray-50/50 to-slate-50",
+    emerald: "bg-gradient-to-br from-emerald-50 via-emerald-100/50 to-teal-50",
+    cyan: "bg-gradient-to-br from-cyan-50 via-cyan-100/50 to-sky-50",
+    orange: "bg-gradient-to-br from-orange-50 via-orange-100/50 to-red-50",
   }
 
   const textColors: { [key: string]: string } = {
@@ -55,6 +58,9 @@ export default function Portfolio() {
     pink: "text-pink-600",
     yellow: "text-yellow-500",
     gray: "text-gray-600",
+    emerald: "text-emerald-600",
+    cyan: "text-cyan-600",
+    orange: "text-orange-600",
   }
 
   const skills = [
@@ -376,7 +382,7 @@ export default function Portfolio() {
               >
                 <Palette className="h-4 w-4" />
                 <Select value={theme} onValueChange={setTheme}>
-                  <SelectTrigger className="w-20 sm:w-24">
+                  <SelectTrigger className="w-30 sm:w-30">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -387,6 +393,9 @@ export default function Portfolio() {
                     <SelectItem value="pink">🩷 Pink</SelectItem>
                     <SelectItem value="yellow">🟡 Yellow</SelectItem>
                     <SelectItem value="gray">⚫ Gray</SelectItem>
+                    <SelectItem value="emerald">❇️ Emerald</SelectItem>
+                    <SelectItem value="cyan">💠 Cyan</SelectItem>
+                    <SelectItem value="orange">🟠 Orange</SelectItem>
                   </SelectContent>
                 </Select>
               </motion.div>
