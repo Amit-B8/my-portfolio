@@ -288,9 +288,15 @@ export default function Portfolio() {
     {
       title: "Digital Infrastructure Solutions Intern",
       company: "HNTB",
-      period: "May 2026 - August 2026",
+      period: "May 2026 - Present",
       description: "Developed and optimized full-stack web applications using Angular, TypeScript, JavaScript, HTML, and CSS, while building and troubleshooting backend cloud infrastructure with Python and AWS. Engineered interactive GIS solutions using ArcGIS Pro and ArcGIS Experience Builder for major transportation initiatives, including a World Cup traffic management tool and live occupancy widgets. Authored custom SQL expressions to drive real-time map filters and UI triggers.",
       images: ["/HNTB1.jpg", "/HNTB2.jpg", "/HNTB3.jpg", "/HNTB4.JPG"],
+    },
+    {
+      title: "Information Technology Specialist",
+      company: "University of Iowa - Information Technology Services (ITS)",
+      period: "September 2026 - Present",
+      description: "Support the ITS Physical Infrastructure team on the Port Reclamation Project by verifying and documenting network infrastructure across campus. Identify active and inactive network ports, validate physical connections against existing records, investigate discrepancies, and help maintain accurate network inventory data for infrastructure planning, security, and resource management.",
     },
     {
       title: "Supply Chain Planner Intern",
