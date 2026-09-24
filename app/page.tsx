@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Github, Linkedin, Mail, ExternalLink, Code, Palette, ImageIcon } from "lucide-react"
+import { Github, Linkedin, Mail, ExternalLink, Code, Palette, ImageIcon, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog"
 import { ProjectDetailsPage } from "@/components/ProjectDetailsPage"
@@ -56,7 +56,7 @@ export default function Portfolio() {
     red: "text-red-600",
     green: "text-green-600",
     pink: "text-pink-600",
-    yellow: "text-yellow-500",
+    yellow: "text-yellow-700",
     gray: "text-gray-600",
     emerald: "text-emerald-600",
     cyan: "text-cyan-600",
@@ -388,7 +388,7 @@ export default function Portfolio() {
               >
                 <Palette className="h-4 w-4" />
                 <Select value={theme} onValueChange={setTheme}>
-                  <SelectTrigger className="w-30 sm:w-30">
+                  <SelectTrigger aria-label="Color theme" className="w-30 sm:w-30">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -407,6 +407,13 @@ export default function Portfolio() {
               </motion.div>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center gap-4 overflow-x-auto border-t px-4 py-3 md:hidden" aria-label="Sections">
+          {["About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
+            <Link key={item} href={`#${item.toLowerCase()}`} className="shrink-0 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground">
+              {item}
+            </Link>
+          ))}
         </div>
       </motion.nav>
 
@@ -441,24 +448,32 @@ export default function Portfolio() {
               </motion.h1>
 
               <motion.p
-                className="mx-auto max-w-[600px] text-base sm:text-lg md:text-xl text-muted-foreground px-4"
+                className="mx-auto max-w-[600px] text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground px-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Full Stack Developer passionate about creating innovative web
-                applications using React.js, Python, and modern technologies.
+                Full Stack Developer building web applications and hands-on hardware
+                projects with React, Python, and embedded systems.
               </motion.p>
             </motion.div>
 
             <motion.div
-              className="flex justify-center px-4"
+              className="flex flex-wrap justify-center gap-3 px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" asChild className="w-full sm:w-auto">
+                  <Link href="#projects">
+                    View Projects
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" variant="outline" asChild className="bg-white/50">
                   <Link href="#contact">
                     <Mail className="mr-2 h-4 w-4" />
                     Get In Touch
@@ -474,8 +489,8 @@ export default function Portfolio() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               {[
-                { href: "https://github.com/Amit-B8", icon: Github },
-                { href: "https://www.linkedin.com/in/amit-boodhoo/", icon: Linkedin },
+                { href: "https://github.com/Amit-B8", icon: Github, label: "GitHub profile" },
+                { href: "https://www.linkedin.com/in/amit-boodhoo/", icon: Linkedin, label: "LinkedIn profile" },
               ].map((social, idx) => (
                 <motion.div
                   key={idx}
@@ -486,7 +501,7 @@ export default function Portfolio() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button variant="ghost" size="icon" asChild>
-                    <Link href={social.href} target="_blank" rel="noopener noreferrer">
+                    <Link href={social.href} aria-label={social.label} target="_blank" rel="noopener noreferrer">
                       <social.icon className="h-5 w-5" />
                     </Link>
                   </Button>
@@ -537,7 +552,7 @@ export default function Portfolio() {
                     scale: 1.1,
                     boxShadow: "0 10px 30px rgba(99,102,241,0.3)",
                   }}
-                  className="flex flex-col items-center justify-center p-3 sm:p-4 rounded-lg bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-colors cursor-pointer"
+                  className="flex flex-col items-center justify-center p-3 sm:p-4 rounded-lg bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-colors"
                 >
                   <motion.img
                     src={skill.icon || "/placeholder.svg"}
@@ -623,13 +638,13 @@ export default function Portfolio() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   whileHover={{
-                    y: -10,
+                    y: -4,
                     boxShadow: "0 20px 40px rgba(99,102,241,0.2)",
                   }}
                   onClick={() => setSelectedProject(project)}
                   className="cursor-pointer"
                 >
-                  <Card className="overflow-hidden h-full bg-white/50 backdrop-blur-sm border-white/20 hover:border-white/40 transition-all relative group">
+                  <Card className="overflow-hidden h-full bg-white/60 backdrop-blur-sm border-white/60 hover:border-slate-300/70 transition-colors relative group">
                     <motion.div
                       className="aspect-video bg-transparent relative overflow-hidden"
                       whileHover={{ scale: 1.05 }}
@@ -658,9 +673,9 @@ export default function Portfolio() {
                     </motion.div>
 
                     <CardHeader>
-                      <CardTitle className="flex items-center justify-between text-lg sm:text-xl">
+                      <CardTitle className="flex items-start justify-between gap-2 text-lg sm:text-xl">
                         {project.title}
-                        <div className="flex space-x-2">
+                        <div className="flex shrink-0 space-x-1">
                           <motion.div
                             whileHover={{ scale: 1.2, rotate: 5 }}
                             whileTap={{ scale: 0.9 }}
@@ -674,6 +689,8 @@ export default function Portfolio() {
                             >
                               <Link
                                 href={project.githubUrl}
+                                aria-label={`View ${project.title} on GitHub`}
+                                rel="noopener noreferrer"
                                 target="_blank"
                               >
                                 <Github className="h-4 w-4" />
@@ -695,6 +712,8 @@ export default function Portfolio() {
                               >
                                 <Link
                                   href={project.liveUrl}
+                                  aria-label={`Try ${project.title}`}
+                                  rel="noopener noreferrer"
                                   target="_blank"
                                 >
                                   <ExternalLink className="h-4 w-4" />
@@ -704,12 +723,12 @@ export default function Portfolio() {
                           )}
                         </div>
                       </CardTitle>
-                      <CardDescription className="text-sm">
+                      <CardDescription className="text-sm leading-relaxed line-clamp-4">
                         {project.description}
                       </CardDescription>
                     </CardHeader>
 
-                    <CardContent>
+                    <CardContent className="mt-auto space-y-5">
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, techIndex) => (
                           <motion.div
@@ -725,6 +744,17 @@ export default function Portfolio() {
                           </motion.div>
                         ))}
                       </div>
+                      <Button
+                        variant="ghost"
+                        className="px-0 hover:bg-transparent hover:underline underline-offset-4"
+                        aria-label={`View details about ${project.title}`}
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          setSelectedProject(project)
+                        }}
+                      >
+                        View project <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
                     </CardContent>
                   </Card>
                 </motion.div>
