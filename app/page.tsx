@@ -289,6 +289,7 @@ export default function Portfolio() {
     {
       title: "Digital Infrastructure Solutions Intern",
       company: "HNTB",
+      logo: "/logos/hntb.png",
       period: "May 2026 - Present",
       description: "Developed and optimized full-stack web applications using Angular, TypeScript, JavaScript, HTML, and CSS, while building and troubleshooting backend cloud infrastructure with Python and AWS. Engineered interactive GIS solutions using ArcGIS Pro and ArcGIS Experience Builder for major transportation initiatives, including a World Cup traffic management tool and live occupancy widgets. Authored custom SQL expressions to drive real-time map filters and UI triggers.",
       images: ["/HNTB1.jpg", "/HNTB2.jpg", "/HNTB3.jpg", "/HNTB4.JPG"],
@@ -296,12 +297,14 @@ export default function Portfolio() {
     {
       title: "Information Technology Specialist",
       company: "University of Iowa - Information Technology Services (ITS)",
+      logo: "/logos/iowa.png",
       period: "September 2026 - Present",
       description: "Support the ITS Physical Infrastructure team on the Port Reclamation Project by verifying and documenting network infrastructure across campus. Identify active and inactive network ports, validate physical connections against existing records, investigate discrepancies, and help maintain accurate network inventory data for infrastructure planning, security, and resource management.",
     },
     {
       title: "Supply Chain Planner Intern",
       company: "Eaton",
+      logo: "/logos/eaton.svg",
       period: "May 2025 - August",
       description:
         "Collaborated on a project to optimize order modifiers by developing a more efficient method to pull, review, and update planning data, improving visibility for potential changes. Analyzed excess inventory using large Excel datasets and maintained Oracle data by identifying usage patterns, correcting lead time errors, updating bills of materials, renaming parts, and contributing to non-standard job processing to support inventory reduction and data accuracy.",
@@ -310,6 +313,7 @@ export default function Portfolio() {
     {
       title: "Soccer Referee",
       company: "U.S Soccer Federation",
+      logo: "/logos/us-soccer.png",
       period: "June 2017 - 2024",
       description:
         "Officiated 4+ youth soccer games per week for ages 10-18, including both regular season and tournament matches, ensuring safety, fairness, and consistent rule enforcement. Assisted injured players and resolved conflicts to maintain a safe environment. Covered extra games during busy tournaments or referee absences to keep matches running smoothly.",
@@ -318,6 +322,7 @@ export default function Portfolio() {
     {
       title: "Desk Clerk",
       company: "University of Iowa Housing & Dining",
+      logo: "/logos/iowa.png",
       period: "August 2025 - Present",
       description:
         "Assist residents with package pickup, key management, and general inquiries. Manage resident data and package records using Excel while ensuring accuracy and confidentiality. Collaborate with staff to maintain a welcoming and efficient dorm environment.",
@@ -804,19 +809,26 @@ export default function Portfolio() {
                 >
                   <Card className="bg-white/50 backdrop-blur-sm border-white/20 hover:border-white/40 transition-all">
                     <CardHeader>
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <CardTitle className="text-lg sm:text-xl">
-                          {job.title}
-                        </CardTitle>
-                        <motion.div whileHover={{ scale: 1.05 }}>
-                          <Badge variant="secondary" className="w-fit">
-                            {job.period}
-                          </Badge>
-                        </motion.div>
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-16 w-20 shrink-0 items-center justify-center rounded-xl border border-slate-200/70 bg-white p-2 shadow-sm sm:w-24">
+                          <img src={job.logo} alt={`${job.company} logo`} className="max-h-full w-full object-contain" />
+                        </div>
+                        <div className="min-w-0 flex-1 space-y-2">
+                          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                            <CardTitle className="text-lg sm:text-xl">
+                              {job.title}
+                            </CardTitle>
+                            <motion.div className="shrink-0" whileHover={{ scale: 1.05 }}>
+                              <Badge variant="secondary" className="w-fit">
+                                {job.period}
+                              </Badge>
+                            </motion.div>
+                          </div>
+                          <CardDescription className="font-medium text-sm sm:text-base">
+                            {job.company}
+                          </CardDescription>
+                        </div>
                       </div>
-                      <CardDescription className="font-medium text-sm sm:text-base">
-                        {job.company}
-                      </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <p className="text-muted-foreground text-sm sm:text-base">
