@@ -200,6 +200,20 @@ export default function Portfolio() {
       "We were working under a strict 48-hour deadline, which made traditional 3D printing iteration nearly impossible. We were also entering a mostly mechanical engineering competition with little to no CAD experience, so I had to teach myself CAD quickly as well as figure out how to 3D print within a very short timeframe, which took a while to get comfortable with. To work within the time constraints, I optimized the CAD models by reducing unnecessary Z-height and designed a low-profile speed sleeve with 0.8 mm walls, which brought print times down from hours to under 15 minutes. On the electronics side, fitting everything into a tight housing required hardware workarounds, so we used the microcontroller’s internal pull-up resistors to eliminate the need for external breadboard wiring. Because of the time pressure, we went through multiple failed concepts, including manual grippers and test cup designs, before landing on a working approach. I documented these iterations in an open-source GitHub “graveyard” to show the full design process and not just the final result."
     },
     {
+      title: "DevBox",
+      description:
+        "A browser-based toolkit that brings developer utilities, engineering calculators, and everyday tools into one place. Features JSON and Markdown conversion, PDF merging, image conversion, and secure password generation in a clean, responsive interface.",
+      detailedDescription:
+        "DevBox is a collection of browser-based tools for students, programmers, engineers, and anyone who needs a quick utility for class, work, or everyday life. It brings together engineering tools, math calculators, medical reference calculators, finance tools, and file utilities in one place.\n\nWhether you're working with code, checking a calculation for class, planning a budget, or combining documents, DevBox makes it easy to find the tool you need. The app includes dedicated pages for each tool, interactive code editors where useful, and browser-based PDF and image processing that keeps files on your device.",
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Monaco Editor", "pdf-lib", "Web Crypto API"],
+      githubUrl: "https://github.com/Amit-B8/DevBox",
+      liveUrl: "https://devbox-bem.pages.dev/",
+      image: "/DevBox.png",
+      containImage: true,
+      challengesFaced:
+        "Building tools for different subjects meant handling different inputs, calculations, and outputs while keeping the interface consistent. Each tool needed clear controls and useful feedback so users could move between tasks without having to learn a new layout every time.\n\nThe password generator required careful handling of randomness. I used the Web Crypto API to generate random values, avoided bias when selecting characters, and ensured every selected character group was included. I then shuffled the result so required characters would not appear in predictable positions.\n\nFor file utilities, I used pdf-lib to merge PDFs and the Canvas API to convert images directly in the browser. This involved managing file inputs, generating downloadable results, and handling errors while keeping the steps straightforward for users.",
+    },
+    {
       title: "FlashQuest",
       description:
         "A gamified flashcard application where study habits directly impact a digital pet's survival. Features real-time lifespan mechanics powered by flashcard mastery, a coin economy for learning rewards, and persistent state management.",
@@ -211,19 +225,6 @@ export default function Portfolio() {
       image: "/FlashQuestLogo.png?height=200&width=300",
       challengesFaced:
         "The main challenge was synchronizing the Web Speech API with the flashcard state management without creating race conditions. I had to implement a queue system for speech recognition events and debounce the API calls to prevent duplicate submissions. Another significant hurdle was maintaining the pet's animation smoothness while managing frequent state updates. I solved this by separating the animation state from the data state, allowing the UI to update independently.\n\nPersistent state management across browser sessions required implementing localStorage efficiently without blocking the main thread. I used a custom hook with async operations to ensure the app remained responsive even with large datasets.",
-    },
-    {
-      title: "Speak2Trivia",
-      description:
-        "Full-stack application with speech recognition being used to learn new topics and trivia questions",
-      detailedDescription:
-        "Speak2Trivia leverages modern web APIs to create an innovative learning platform. Users can speak their answers to trivia questions about various topics, and the application evaluates their responses in real-time. The platform supports multiple difficulty levels and customizable trivia categories.",
-      technologies: ["React", "Next.js", "TypeScript", "CSS"],
-      githubUrl: "https://github.com/Amit-B8/Speak2Trivia",
-      liveUrl: "#",
-      image: "/Speak2TriviaLogo.png?height=200&width=300",
-      challengesFaced:
-        "Building a speech recognition system that accurately evaluates user answers was complex. I had to implement fuzzy string matching to handle variations in how users phrased their answers. The challenge was balancing accuracy with false positives to create a forgiving but still meaningful feedback system.",
     },
     {
       title: "MemeMachine",
@@ -371,12 +372,12 @@ export default function Portfolio() {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Link
+                      <a
                         href={`#${item.toLowerCase()}`}
                         className="text-sm font-medium hover:text-primary transition-colors"
                       >
                         {item}
-                      </Link>
+                      </a>
                     </motion.div>
                   )
                 )}
@@ -410,9 +411,9 @@ export default function Portfolio() {
         </div>
         <div className="flex justify-center gap-4 overflow-x-auto border-t px-4 py-3 md:hidden" aria-label="Sections">
           {["About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
-            <Link key={item} href={`#${item.toLowerCase()}`} className="shrink-0 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground">
+            <a key={item} href={`#${item.toLowerCase()}`} className="shrink-0 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground">
               {item}
-            </Link>
+            </a>
           ))}
         </div>
       </motion.nav>
@@ -466,18 +467,18 @@ export default function Portfolio() {
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" asChild className="w-full sm:w-auto">
-                  <Link href="#projects">
+                  <a href="#projects">
                     View Projects
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" variant="outline" asChild className="bg-white/50">
-                  <Link href="#contact">
+                  <a href="#contact">
                     <Mail className="mr-2 h-4 w-4" />
                     Get In Touch
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </motion.div>
@@ -646,13 +647,13 @@ export default function Portfolio() {
                 >
                   <Card className="overflow-hidden h-full bg-white/60 backdrop-blur-sm border-white/60 hover:border-slate-300/70 transition-colors relative group">
                     <motion.div
-                      className="aspect-video bg-transparent relative overflow-hidden"
+                      className={`aspect-video relative overflow-hidden ${project.containImage ? "bg-[#020a18]" : "bg-transparent"}`}
                       whileHover={{ scale: 1.05 }}
                     >
                       <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${project.containImage ? "object-contain scale-110" : "object-cover"}`}
                       />
                     <motion.div
                       className="absolute inset-0 bg-black/0 flex flex-col items-center justify-center"

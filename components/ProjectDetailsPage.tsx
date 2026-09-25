@@ -22,6 +22,7 @@ interface ProjectDetailsPageProps {
     githubUrl: string
     liveUrl: string
     image?: string
+    containImage?: boolean
     images?: string[]
     videoDemo?: string
     challengesFaced?: string
@@ -126,12 +127,12 @@ export function ProjectDetailsPage({
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.35 }}
-                className="rounded-xl overflow-hidden shadow-lg"
+                className={`rounded-xl overflow-hidden shadow-lg ${project.containImage ? "bg-[#020a18]" : ""}`}
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-auto object-cover max-h-96"
+                  className={project.containImage ? "w-full h-64 sm:h-96 object-contain scale-110" : "w-full h-auto object-cover max-h-96"}
                 />
               </motion.div>
             )}
